@@ -11,7 +11,8 @@ public class SumOfTwoArrays {
         displayArray(array_1);
         System.out.println("\nMảng thứ hai");
         displayArray(array_2);
-
+        System.out.println("\nMa trận tổng");
+        displayArray(sumOfArrays(numberOfRows,numberOfColumns,array_1,array_2));
 
     }
 
@@ -47,5 +48,13 @@ public class SumOfTwoArrays {
         return scanner.nextInt();
     }
 
-
+    private static int[][] sumOfArrays(int numberOfRows, int numberOfColumns, int[][] array_1, int[][] array_2) {
+        int[][] arraySum=new int[numberOfRows][numberOfColumns];
+        for (int i = 0; i < arraySum.length; i++) {
+            for (int j = 0; j < arraySum[i].length; j++) {
+                arraySum[i][j] = array_1[i][j] + array_2[i][j];
+            }
+        }
+        return arraySum;
+    }
 }
